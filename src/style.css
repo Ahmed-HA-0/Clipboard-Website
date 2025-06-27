@@ -1,0 +1,61 @@
+@import 'tailwindcss';
+@theme {
+  --breakpoint-*: initial;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1250px;
+  --color-strongCyan: hsl(171, 66%, 44%);
+  --color-lightBlue: hsl(233, 100%, 69%);
+  --color-darkGrayishBlue: hsl(210, 10%, 33%);
+  --color-grayishBlue: hsl(201, 11%, 66%);
+  --font-Bai-Jamjuree: Bai Jamjuree, sans-serif;
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-6xl mx-auto px-10;
+  }
+
+  .section-title {
+    @apply font-Bai-Jamjuree font-semibold text-center text-darkGrayishBlue text-4xl mb-8 md:text-5xl;
+  }
+
+  .section-description {
+    @apply text-center leading-9 text-grayishBlue text-xl font-normal font-Bai-Jamjuree max-w-md lg:max-w-3xl mx-auto;
+  }
+
+  .ios-btn-download {
+    @apply rounded-full bg-strongCyan w-full py-4 shadow-lg cursor-pointer transition-all duration-200 hover:opacity-80 md:w-auto md:px-8;
+  }
+
+  .mac-btn-download {
+    @apply rounded-full bg-lightBlue w-full py-4 shadow-lg cursor-pointer transition-all duration-200 hover:opacity-80 md:w-auto md:px-8;
+  }
+
+  .link-to-install {
+    @apply font-Bai-Jamjuree text-white text-xl;
+  }
+
+  .features-description {
+    @apply text-grayishBlue font-Bai-Jamjuree text-xl font-normal max-w-md mx-auto lg:text-2xl;
+  }
+}
+
+@layer base {
+  h5 {
+    @apply text-darkGrayishBlue font-semibold text-2xl font-Bai-Jamjuree mb-2.5 lg:text-3xl;
+  }
+}
+
+body {
+  background-image: url('../dist/images/bg-header-desktop.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 768px) {
+  body {
+    background-image: url('../dist/images/bg-header-mobile.png');
+  }
+}
